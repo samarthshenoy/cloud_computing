@@ -1,0 +1,5 @@
+sudo curl -L -o /etc/yum.repos.d/corretto.repo https://rpm.releases.hashicorp.com/AmazonCorretto/corretto.repo
+
+sudo yum install -y java-11-amazon-corretto-devel
+
+java -version
