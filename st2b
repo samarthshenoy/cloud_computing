@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+    int locks,stocks,barrels;
+    float sales,commission;
+    printf("enter the locks ,stocks,barrels \n");
+    scanf("%d%d%d",&locks,&stocks,&barrels);
+    if(locks<1||locks>70||stocks<1||stocks>80||barrels<1||barrels>90){
+        printf("invali range");
+    }
+    else{
+        sales=locks*45.0+stocks*30.0+barrels*25.0;
+        commission=sales>1800 ? 0.10*1000+0.15*800+0.20*(sales-1800):
+        sales>1000 ? 0.10*1000+0.15*(sales-1000):
+        0.10*sales;
+        printf("sales:%.2f\n",sales);
+        printf("commission:%.2f\n",commission);
+    }
+        return 0;
+    
+}
