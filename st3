@@ -1,0 +1,49 @@
+#include<stdio.h>
+int isLeapYear(int year){
+    if((year%4==0 && year%100!=0)||(year%400==0)){
+        return 1;
+    }else{
+        return 0;
+    }
+    }
+    
+    int daysInMonths(int month,int year){
+        switch(month){
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+            case 4: case 6: case 9: case 11:
+            return 30;
+            case 2:
+           return isLeapYear(year);
+        
+        default:
+        return -1;
+    }
+}
+
+void nextDate(int day,int month,int year){
+ int maxDays=daysInMonths( month, year);
+ 
+ if(day<1||day>maxDays||month<1||month>12||year<1)
+ {
+     printf("invali dates\n");
+     return;
+ }
+ 
+ day++;
+ if(day>maxDays){
+     month++;
+     if(month>12){
+         year++;
+     }
+ }
+    printf("next dates:%02d/%02d/%04d",day,month,year);
+    }
+    int main(){
+        int day,month,year;
+        printf("enter the dates ddmmyyyy");
+        scanf("%d%d%d",&day,&month,&year);
+        
+        nextDate(day,month,year);
+        return 0;
+    }
