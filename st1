@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int a,b,c;
+    printf("enter three side of triangle");
+    scanf("%d%d%d",&a,&b,&c);
+    if((a<1||a>10) || (b<1||b>10) ||(c<1||c>10)){
+        printf("out of range");
+        exit(0);
+    }
+    if((a<b+c) && (b<a+c) && (c<a+b)){
+        
+             if((a==b) &&(b==c))
+                printf("equilaterl triangle");
+                else if((a!=b)&&(b!=c)&&(a!=c))
+                    printf("scalen triangle");
+                
+                else
+                    printf("isoclen triangle");
+                }
+                else
+                printf("triangle not formed\n");
+            
+            return 0;
+        }
+    
